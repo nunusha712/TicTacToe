@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity() {
         when (result) {
             "WIN" -> {
                 statusText.text = "Player ${game.activePlayer} Wins!"
-                statusText.setTextColor(Color.WHITE)
+                statusText.setTextColor(Color.parseColor("#FFA81078"))
                 playAgainBtn.visibility = View.VISIBLE
             }
             "DRAW" -> {
                 statusText.text = "It's a Draw!"
-                statusText.setTextColor(Color.LTGRAY)
+                statusText.setTextColor(Color.parseColor("#FFA81078"))
                 playAgainBtn.visibility = View.VISIBLE
             }
             "CONTINUE" -> {
@@ -60,8 +60,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateStatusUI(statusText: TextView) {
         statusText.text = "Player ${game.activePlayer}'s Turn"
-        val color = if (game.activePlayer == "X") "#F806CC" else "#A91079"
-        statusText.setTextColor(Color.parseColor(color))
     }
 
     private fun resetUI(buttons: Array<Button>, statusText: TextView, playAgainBtn: Button) {
